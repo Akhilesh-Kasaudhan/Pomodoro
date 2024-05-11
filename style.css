@@ -1,0 +1,137 @@
+:root{
+    /* font-size: 62.5%; */
+    --color-primary:#112241;
+    --color-secondary:#EE7276;
+    --color-font:#ffffe6;
+    --color-shadow:#393e79; 
+
+}
+ *{ 
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+background-color: var(--color-primary);
+/* font-size: 1.6rem; */
+font-family: 'Open Sans',sans-serif;
+}
+p,i,h1{
+    color: var(--color-font);
+}
+i{
+    font-size: 2rem;
+    filter: drop-shadow(5px 5px rgba(230, 212, 21, 0.229));
+}
+h1{
+    font-size: 5rem;
+}
+@media screen and (max-width:600px){
+    h1{
+        font-size:3.5rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .container{
+        gap:5px;
+    }
+  
+}
+section{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.container{
+    width:100%;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.panel{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    width:15rem;
+    margin-block: 5rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    /* border: 1px solid saddlebrown; */
+    box-shadow:0 0 15px 10px var(--color-shadow);
+
+}
+.panel p{
+    opacity: 0.8;
+    transition:1s ease-in ;
+}
+.panel p.active{
+    opacity: 1;
+    color: var(--color-secondary);
+}
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    border: 2px solid red;
+    box-shadow:0 0 15px 10px var(--color-shadow);
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    /* border: 2px solid palevioletred; */
+    background-color: var(--color-secondary);
+    position: relative;
+}
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+.time{
+    position: relative;
+    display: flex;
+}
+.time p{
+    font-size: 3rem;
+}
+.time p:nth-of-type(2){
+    position: relative;
+    top: -.5rem;
+    margin-inline: .6rem; 
+}
+.controls{
+    margin-top: 2rem;
+    border: 1px solid palegoldenrod;
+    border-radius: 1rem;
+    width: 8rem;
+    text-align: center;
+}
+.controls button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    min-width: 100%;
+}
+.controls #reset{
+    display: none;
+}
